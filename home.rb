@@ -8,9 +8,14 @@ end
 get "/info" do
   
   logger.info params
-  
-  "The new card holder is #{params["firstname", "lastname", "male", "female", "mystery", 
-    "fantasy", "crime", "nonfiction", "Books", "Movies", "Magazines"]}"
+  @firstname = "#{params["firstname"]}"
+  @lastname = "#{params["lastname"]}"
+  @sex = "#{params["sex"]}"
+  @message = "#{params["message"]}"
+  @genres = "#{params["genres"]}"
+  @likes = "#{params["likes"]}"
+  erb :reginfo, :layout => :boilerplate2
+    
 end
 
 
